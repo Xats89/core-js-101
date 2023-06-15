@@ -203,8 +203,6 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-  // throw new Error('Not implemented');
-  // const top = String.fromCharCode(9484) + '─'.repeat(width - 2) + '┐\n';
   const a = String.fromCharCode(9484);
   const b = String.fromCharCode(9488);
   const c = String.fromCharCode(9492);
@@ -217,7 +215,6 @@ function getRectangleString(width, height) {
   const bottom = `${c}${horisontal}${d}\n`;
   return `${top}${inside.repeat(height - 2)}${bottom}`;
 }
-// console.log(getRectangleString(5, 5))
 
 /**
  * Encode specified string with ROT13 cipher
@@ -236,7 +233,6 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-  // throw new Error('Not implemented');
   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'.split('');
   let out = '';
   for (let i = 0; i < str.length; i += 1) {
@@ -260,7 +256,6 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  // throw new Error('Not implemented');
   return typeof value === 'string' || value instanceof String;
 }
 
@@ -290,7 +285,6 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-  // throw new Error('Not implemented');
   const cards = ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣', 'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦', 'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥', 'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'];
   return cards.indexOf(value);
 }
