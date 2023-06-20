@@ -146,6 +146,7 @@ function getStringsLength(arr) {
   return arr.map((el) => el.length);
 }
 
+
 /**
  * Inserts the item into specified array at specified index
  *
@@ -161,6 +162,7 @@ function insertItem(arr, item, index) {
   return arr.splice(index, 0, item);
 }
 
+
 /**
  * Returns the n first items of the specified array
  *
@@ -174,6 +176,7 @@ function insertItem(arr, item, index) {
 function getHead(arr, n) {
   return arr.slice(0, n);
 }
+
 
 /**
  * Returns the n last items of the specified array
@@ -214,6 +217,7 @@ function toCsvText(arr) {
   return arr.join('\n');
 }
 
+
 /**
  * Transforms the numeric array into the according array of squares:
  *   f(x) = x * x
@@ -245,8 +249,15 @@ function toArrayOfSquares(arr) {
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
 function getMovingSum(arr) {
-  throw new Error('Not implemented');
+  const arr1 = [];
+  const arr2 = arr.reduce((total, value) => {
+    arr1.push(total);
+    return total + value;
+  });
+  arr1.push(arr2);
+  return arr1;
 }
+
 
 /**
  * Returns every second item from the specified array:
@@ -259,8 +270,8 @@ function getMovingSum(arr) {
  * [ 'a', 'b', 'c' , null ]  => [ "b", null ]
  * [ "a" ] => []
  */
-function getSecondItems(/* arr */) {
-  throw new Error('Not implemented');
+function getSecondItems(arr) {
+  return arr.filter((el, index) => index % 2 !== 0);
 }
 
 
@@ -278,9 +289,15 @@ function getSecondItems(/* arr */) {
  *  [ 'a', 'b', 'c', null ] => [ 'a', 'b','b', 'c','c','c',  null,null,null,null ]
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
-function propagateItemsByPositionIndex(/* arr */) {
-  throw new Error('Not implemented');
+function propagateItemsByPositionIndex(arr) {
+  // throw new Error('Not implemented');
+  const arr1 = arr.map((el, index) => `${el},`.repeat(index + 1).slice(0, -1).split(','));
+  return arr1.flat().map((el) => {
+    if (el === 'null') return null;
+    return el;
+  });
 }
+// console.log(propagateItemsByPositionIndex(['a', 'b', 'c', null]))
 
 
 /**
