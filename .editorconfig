@@ -14,5 +14,5 @@ quote_type = single
 [*.md]
 trim_trailing_whitespace = false
 
-[*.json]
+[*.json]z
 insert_final_newline = false
